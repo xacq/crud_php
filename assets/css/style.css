@@ -1,0 +1,196 @@
+
+        :root {
+            --fondo: #f3f4f6;
+            --panel: #ffffff;
+            --texto: #111827;
+            --secundario: #6b7280;
+            --borde: #d1d5db;
+            --principal: #111827;
+            --principal-hover: #374151;
+            --error-fondo: #fef2f2;
+            --error-texto: #991b1b;
+            --exito-fondo: #ecfdf5;
+            --exito-texto: #065f46;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .contenedor {
+            width: min(1100px, calc(100% - 32px));
+            margin: 40px auto;
+        }
+
+        .cabecera {
+            margin-bottom: 24px;
+        }
+
+        .cabecera h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        .cabecera p {
+            margin: 0;
+            color: var(--secundario);
+        }
+
+        .panel {
+            padding: 28px;
+            background: var(--panel);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+        }
+
+        .seccion {
+            margin-bottom: 30px;
+        }
+
+        .seccion:last-child {
+            margin-bottom: 0;
+        }
+
+        .seccion h2 {
+            margin: 0 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 19px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .campo-completo {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .requerido {
+            color: #b91c1c;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid var(--borde);
+            border-radius: 7px;
+            background: #ffffff;
+            color: var(--texto);
+            font: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid rgba(17, 24, 39, 0.12);
+            border-color: var(--principal);
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .ayuda {
+            display: block;
+            margin-top: 5px;
+            color: var(--secundario);
+            font-size: 12px;
+        }
+
+        .alerta {
+            margin-bottom: 22px;
+            padding: 14px 16px;
+            border-radius: 8px;
+        }
+
+        .alerta ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .alerta-error {
+            background: var(--error-fondo);
+            color: var(--error-texto);
+            border: 1px solid #fecaca;
+        }
+
+        .alerta-exito {
+            background: var(--exito-fondo);
+            color: var(--exito-texto);
+            border: 1px solid #a7f3d0;
+        }
+
+        .acciones {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 0;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .boton-principal {
+            background: var(--principal);
+            color: #ffffff;
+        }
+
+        .boton-principal:hover {
+            background: var(--principal-hover);
+        }
+
+        .boton-secundario {
+            background: #e5e7eb;
+            color: var(--texto);
+        }
+
+        @media (max-width: 720px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .campo-completo {
+                grid-column: auto;
+            }
+
+            .panel {
+                padding: 20px;
+            }
+
+            .acciones {
+                flex-direction: column-reverse;
+            }
+
+            .boton {
+                width: 100%;
+                text-align: center;
+            }
+        }
